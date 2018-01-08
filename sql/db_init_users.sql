@@ -18,5 +18,7 @@ CREATE TABLE user (
     Email varchar(255),
 	CreationDate datetime,
 	PasswordHash varchar(255) NOT NULL,
+    RegistrationCode varchar(255) NOT NULL,
+    ActiveStatus int NOT NULL,
 	PRIMARY KEY (UserName)
 ); 
