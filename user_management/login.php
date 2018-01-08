@@ -30,7 +30,7 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
             
             $qry->bind_result($username, $passwordHash);
 
-            if($query->num_rows == 1){
+            if($qry->num_rows == 1){
                 $qry->fetch();
     
                 if(password_verify($password, $passwordHash)){
