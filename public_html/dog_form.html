@@ -1,0 +1,231 @@
+<div class="row is-table-row" id="topBox">
+    <div id="nameBox" class="col-sm-3">
+        <div class="groupBox">
+            <span class="boxTitle">Animal Name:<br></span>
+                <input id="name" name="animalName" type="text">
+        </div>
+    </div>
+    <div id="sexBox" class="col-sm-3">
+        <div class="groupBox">
+            <div class="col-sm-6 radioSelection">
+                <span class="boxTitle">Sex:</span><br/>
+                <input type="radio" name="sex" value="m">Male<br/>
+                <input type="radio" name="sex" value="f">Female
+            </div>
+            <div class="col-sm-6 radioSelection">
+                <span class="boxTitle">Fixed:</span><br/>
+                <input type="radio" name="fixed" value="y">Yes<br/>
+                <input type="radio" name="fixed" value="n">No
+            </div>
+        </div>
+    </div>
+    <div id="breedBox" class="col-sm-3">
+        <div class="groupBox">
+            <span class="boxTitle">Breed:<br></span>
+                <input id="breed" name="breed" type="text">
+        </div>
+    </div>
+    <div id="lostDogReportBox" class="col-sm-3">
+        <div class="groupBox">
+            <h1>LOST DOG</h1>
+        </div>
+    </div>
+</div>
+<div class="row is-table-row" id="firstRow">
+    <div class="col-sm-3">
+        <div id="primaryColor" class="col-sm-6">
+            <div class="floatBox firstRow">
+                <span class="boxTitle">Primary<br/>Color</span><br/>
+                <input id="pBlack" name="primaryColor_black" type="checkbox"> Black<br/>
+                <input id="pGrey" name="primaryColor_grey" type="checkbox"> Grey<br/>
+                <input id="pBrown" name="primaryColor_brown" type="checkbox"> Brown<br/>
+                <input id="pRed" name="primaryColor_red" type="checkbox"> Red<br/>
+                <input id="pYellow" name="primaryColor_yellow" type="checkbox"> Yellow<br/>
+                <input id="pWhite" name="primaryColor_white" type="checkbox"> White
+            </div>
+        </div>
+        <div id="secondaryColor" class="col-sm-6">
+            <div class="floatBox firstRow">
+                <span class="boxTitle">Secondary<br/>Color</span><br/>
+                <input id="sBlack" name="secondaryColor_black" type="checkbox"> Black<br/>
+                <input id="sGrey" name="secondaryColor_grey" type="checkbox"> Grey<br/>
+                <input id="sBrown" name="secondaryColor_brown" type="checkbox"> Brown<br/>
+                <input id="sRed" name="secondaryColor_red" type="checkbox"> Red<br/>
+                <input id="sYellow" name="secondaryColor_yellow" type="checkbox"> Yellow<br/>
+                <input id="sWhite" name="secondaryColor_white" type="checkbox"> White
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="col-sm-7">
+            <div id="coat" class="col-sm-6">
+                <div class="floatBox firstRow">
+                    <span class="boxTitle">Coat<br/></span>
+                    <input id="short" name="coat_short" type="checkbox"> Short<br/>
+                    <input id="medium" name="coat_medium" type="checkbox"> Medium<br/>
+                    <input id="long" name="coat_long" type="checkbox"> Long<br/>
+                    <input id="scruffy" name="coat_wirey" type="checkbox"> Scruffy/Wirey<br/>
+                    <input id="curly" name="coat_curly" type="checkbox"> Curly<br/>
+                    <input id="matted" name="coat_matted" type="checkbox"> Matted<br/>
+                    <input id="shaved" name="coat_shaved" type="checkbox"> Recently Shaved<br/>
+                </div>
+            </div>
+            <div id="size" class="col-sm-6">
+                <div class="floatBox firstRow">
+                    <span class="boxTitle">Size<br/></span>
+                    <input id="small" name="size_small" type="checkbox"> Small (5-25lbs)<br/>
+                    <input id="medium" name="size_medium" type="checkbox"> Medium (25-50lbs)<br/>
+                    <input id="large" name="size_large" type="checkbox"> Large (50-80lbs)<br/>
+                    <input id="xlarge" name="size_xlarge" type="checkbox"> X-Large (80+lbs)<br/>
+                </div>
+            </div>
+        </div>
+        <div id="age" class="col-sm-5">
+            <div class="floatBox firstRow">
+                <span class="boxTitle">Age<br/></span>
+                <input id="puppy" name="age_puppy" type="checkbox"> Puppy (2-6 months)<br/>
+                <input id="youngAdult" name="age_youngAdult" type="checkbox"> Young Adult (6 months - 1 year)<br/>
+                <input id="adult" name="age_adult" type="checkbox"> Adult (1-6 years)<br/>
+                <input id="senior" name="age_senior" type="checkbox"> Senior (7+ years)<br/>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="secondRow">
+    <div class="col-sm-8">
+        <div id="ears" class="col-sm-4">
+            <div class="floatBox secondRow">
+                <span class="boxTitle">Ears<br/></span>
+                <input id="earsCropped" name="ears_cropped" type="checkbox"> Cropped<br/>
+                <input id="earsDroopy" name="ears_droopy" type="checkbox"> Droopy<br/>
+                <input id="earsErect" name="ears_erect" type="checkbox"> Erect<br/>
+                <input id="earsSemi-erect" name="ears_semiErect" type="checkbox"> Semi-erect<br/>
+                <input id="earsFolded" name="ears_folded" type="checkbox"> Folded<br/>
+                <input id="earsLong" name="ears_long" type="checkbox"> Long<br/>
+                <input id="earsNotched" name="ears_notched" type="checkbox"> Notched<br/>
+                <input id="earsMissing" name="ears_missing" type="checkbox"> Missing<br/>
+            </div>
+        </div>
+        <div id="tail" class="col-sm-4">
+            <div class="floatBox secondRow">
+                <span class="boxTitle">Tail<br/></span>
+                <input id="tailDocked" name="tail_docked" type="checkbox"> Docked<br/>
+                <input id="tailShort" name="tail_short" type="checkbox"> Short<br/>
+                <input id="tailMedium" name="tail_medium" type="checkbox"> Medium<br/>
+                <input id="tailLong" name="tail_long" type="checkbox"> Long<br/>
+                <input id="tailCurled" name="tail_curled" type="checkbox"> Curled<br/>
+                <input id="tailNone" name="tail_none" type="checkbox"> None<br/>
+            </div>
+        </div>
+        <div id="collar" class="col-sm-4">
+            <div class="floatBox secondRow">
+                <span class="boxTitle">Collar<br/></span>
+                <input type="radio" name="collar" value="y">Yes 
+                <input type="radio" name="collar" value="n">No<br/>
+                <input id="collarNylon" name="collar_nylon" type="checkbox">Nylon<br/>
+                <input id="collarLeather" name="collar_leather" type="checkbox">Leather<br/>
+                <input id="collarOther" name="collar_other" type="checkbox">Other<br/>
+                Color:<br/>
+                <input id="collarColor" name="collar_color" type="text"><br/>
+                Description:<br/>
+                <input id="collarDescription" name="collar_description" type="text">
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-4">
+        <div id="identification" class="floatBox secondRow">
+            <span class="boxTitle">Identification<br/></span>
+            Any tags on collar:<br/>
+            <input type="radio" name="tags" value="y">Yes 
+            <input type="radio" name="tags" value="n">No<br/>
+            <input id="tagRabies" name="tags_rabies" type="checkbox">Rabies tag<br/>
+            <input id="tagMicrochip" name="tags_microchip" type="checkbox">Microchip tag<br/>
+            <input id="tagShelterID" name="tags_shelterID" type="checkbox">Shelter ID tag<br/>
+            <input id="tagPersonalID" name="tags_personalID" type="checkbox">Personal ID tag<br/>
+            Microchip:
+            <input type="radio" name="has_microchip" value="y">Yes 
+            <input type="radio" name="has_microchip" value="n">No<br/>
+            Number:<br/>
+            <input id="name" name="microchip_number" type="text">
+        </div>
+    </div>
+</div>
+<div class="row" id="thirdRow">
+    <div id="contactBox" class="floatBox">
+        Name <input id="ownerName" type="text"><br/>
+        Address <input id="ownerAddress" type="text"><br/>
+        City <input id="ownerCity" type="text"> 
+        State
+        <select>
+            <option value="MO">MO</option>
+            <option value="AL">AL</option>
+            <option value="AK">AK</option>
+            <option value="AR">AR</option>	
+            <option value="AZ">AZ</option>
+            <option value="CA">CA</option>
+            <option value="CO">CO</option>
+            <option value="CT">CT</option>
+            <option value="DC">DC</option>
+            <option value="DE">DE</option>
+            <option value="FL">FL</option>
+            <option value="GA">GA</option>
+            <option value="HI">HI</option>
+            <option value="IA">IA</option>	
+            <option value="ID">ID</option>
+            <option value="IL">IL</option>
+            <option value="IN">IN</option>
+            <option value="KS">KS</option>
+            <option value="KY">KY</option>
+            <option value="LA">LA</option>
+            <option value="MA">MA</option>
+            <option value="MD">MD</option>
+            <option value="ME">ME</option>
+            <option value="MI">MI</option>
+            <option value="MN">MN</option>
+            <option value="MS">MS</option>
+            <option value="MT">MT</option>
+            <option value="NC">NC</option>	
+            <option value="NE">NE</option>
+            <option value="NH">NH</option>
+            <option value="NJ">NJ</option>
+            <option value="NM">NM</option>			
+            <option value="NV">NV</option>
+            <option value="NY">NY</option>
+            <option value="ND">ND</option>
+            <option value="OH">OH</option>
+            <option value="OK">OK</option>
+            <option value="OR">OR</option>
+            <option value="PA">PA</option>
+            <option value="RI">RI</option>
+            <option value="SC">SC</option>
+            <option value="SD">SD</option>
+            <option value="TN">TN</option>
+            <option value="TX">TX</option>
+            <option value="UT">UT</option>
+            <option value="VT">VT</option>
+            <option value="VA">VA</option>
+            <option value="WA">WA</option>
+            <option value="WI">WI</option>	
+            <option value="WV">WV</option>
+            <option value="WY">WY</option>
+        </select>
+        Zip <input id="ownerZipCode" type="text"><br/>
+        Phone <input id="ownerPhone" type="text">
+        Alt. phone <input id="ownerPhoneAlt" type="text"><br/>
+        Location lost: <br/><textarea id="locationLost" rows="2" cols="50"></textarea><br/>
+        Date of report: <input id="dateOfReport" type="date"> Time: <input id="timeOfReport" type="time"><br/>
+        Accepted by: <input id="reportAcceptedBy" type="text">
+    </div>
+    <div id="descriptionBox" class="floatBox">
+        Unique features/markings/important information?<br/>
+        <textarea id="animalDescription" rows="10" cols="40"></textarea>
+    </div>
+</div>
+<div class="floatBox">
+    Date Lost: <input id="dateLost" type="date"> Time Lost: <input id="timeLost" type="time"><br/>
+    Method of Report:
+    <input type="radio" name="methodOfReport" value="phone">Phone
+    <input type="radio" name="methodOfReport" value="email">Email
+    <input type="radio" name="methodOfReport" value="person">Person<br/>
+    Report #: <input id="reportNumber" type="text">
+</div>
