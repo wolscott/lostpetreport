@@ -3,6 +3,7 @@ session_start();
 
 include_once '../config/db.php';
 
+if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password'])){
 	$connection = connect();
 	$username = $_POST['username'];
 	$password = $_POST['password'];
