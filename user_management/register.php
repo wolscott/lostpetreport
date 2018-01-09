@@ -25,7 +25,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
     }
     $qry->bind_param('s', $regcode);
         
-    var_dump($qry)
+    var_dump($qry);
     
     try {
         $qry->execute();
@@ -52,7 +52,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
                 $stmt->execute();
                 include_once 'send_email.php';
             }
-            catch(PDOException $e){
+            catch(Exception $e){
                 echo "Error: " . $e->getMessage();
             }
             
@@ -60,7 +60,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
 
         }
     }
-    catch(PDOException $e){
+    catch(Exception $e){
         echo "Error: " . $e->getMessage();
     }
     
