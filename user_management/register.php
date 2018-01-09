@@ -9,6 +9,7 @@ session_start();
 include_once '../config/db.php';
 
 if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode']) && isset($_POST['password'])){
+    echo "post variables set";
     $username = $_POST['username'];
     $email = $_POST['email'];
     $regcode = $_POST['regcode'];
@@ -18,7 +19,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
     
     /* first check if the regcode is valid 
      */
-    $qry = "SELECT RegCode FROM regcode WHERE RegCode=?";
+    $qry = "SELECT RegCode FROM regcode WHERE RegCode LIKE ?";
     if(!($qry = $connection->prepare($qry))){
         echo "Prepare failed: (" . $connection->errno . ") " . $connection->error;
     }
@@ -28,7 +29,6 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
         $qry->execute();
 
         $qry->store_result();
-
 
         if($qry->num_rows == 1){
             /* then the regcode is valid. insert the inactive user and then delete the regcode */
