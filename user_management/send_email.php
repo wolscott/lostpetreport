@@ -14,7 +14,7 @@ if(isset($_POST['register'])){
     
     Click the following link to verify your account:
     
-    '.$base_url.'/verify.php?username='.$username.'&regcode='.$regcode;
+    '.$base_url.'/verify.php?username='.$username.'&email='.$email.'&regcode='.$regcode;
     
     mail($email, $subject, $body);
     echo "email sent";
