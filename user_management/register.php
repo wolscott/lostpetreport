@@ -96,8 +96,8 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
         }
         else {
             /* registration code is not valid */
-            echo "<h2>Invalid Registration Code</h2>";
-            echo "This code has been user or has expired. Contact your administrator.";
+            $_SESSION['messageHeader'] "<h2>Invalid Registration Code</h2>";
+            $_SESSION "This code has been user or has expired. Contact your administrator.";
             
         }
     }
