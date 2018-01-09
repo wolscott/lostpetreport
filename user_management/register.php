@@ -17,7 +17,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
     
     $connection = connect();
     /* first check if username is available */
-    $qry = "SELECT RegCode FROM regcode WHERE RegCode=?";
+    $qry = "SELECT UserName FROM user WHERE UserName=?";
     if(!($qry = $connection->prepare($qry))){
         echo "Prepare failed: (" . $connection->errno . ") " . $connection->error;
     }
@@ -28,11 +28,10 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
 
         $qry->store_result();
 
-        $qry->bind_result($username, $passwordHash);
-
         if($qry->num_rows == 1){
             /* username already exists */
             $qry->close();
+            header('Location: ../public_html/registration_page.php');
         }
         else{
     
