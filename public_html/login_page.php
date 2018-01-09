@@ -29,6 +29,7 @@ include_once '../user_management/login.php';
                 <div class="col-lg-2"><button class="btn btn-block" name="login" value="login" type="submit">Log In</div></div>
                 <div class="col-lg-5"></div>
             </div>
+            <a href="registration_page.php">Register a New Account</a>
         </div>
     </form>
 </body>

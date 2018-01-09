@@ -17,8 +17,8 @@ if(isset($_POST['register'])){
     '.$base_url.'/verification_page.php?username='.$username.'&email='.$email.'&regcode='.$regcode;
     
     mail($email, $subject, $body);
-    echo "email sent";
+    echo "<h2>Action Required</h2>";
+    echo "An activation link has been sent to your email address";
 }
-
 
 ?>

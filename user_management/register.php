@@ -30,7 +30,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
 
         $qry->store_result();
 
-        if($qry->num_rows == 1){
+        if($qry->num_rows >= 1){
             /* then the regcode is valid. insert the inactive user and then delete the regcode */
             $qry->close();
             
@@ -71,6 +71,12 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
             
             $stmt->close();
 
+        }
+        else {
+            /* registration code is not valid */
+            echo "<h2>Invalid Registration Code</h2>";
+            echo "This code has been user or has expired. Contact your administrator.";
+            
         }
     }
     catch(Exception $e){
