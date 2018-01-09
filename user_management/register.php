@@ -25,6 +25,8 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
     }
     $qry->bind_param('s', $regcode);
         
+    var_dump($qry)
+    
     try {
         $qry->execute();
 
@@ -41,7 +43,10 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
                 echo "Prepare failed: (" . $connection->errno . ") " . $connection->error;
             }
             
-            $stmt->bind_param('ssssi', $username, $email, password_hash($password, PASSWORD_DEFAULT), $regcode, 0);
+            $hashword = password_hash($password, PASSWORD_DEFAULT);
+            $activeStatus = 0;
+            
+            $stmt->bind_param('ssssi', $username, $email, $hashword, $regcode, $activeStatus);
             
             try {
                 $stmt->execute();
