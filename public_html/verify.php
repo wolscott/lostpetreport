@@ -10,7 +10,7 @@ if(isset($_GET['username']) && isset($_GET['email']) && isset($_GET['regcode']))
 
     $connection = connect();
     
-    $qry = $connection->prepare("SELECT UserName FROM user WHERE UserName=? AND Email=? AND RegCode=?");
+    $qry = $connection->prepare("SELECT UserName FROM user WHERE UserName=? AND Email=? AND RegistrationCode=?");
 
     $qry->bind_param('sss', $username, $email, $regcode);
 
@@ -25,7 +25,7 @@ if(isset($_GET['username']) && isset($_GET['email']) && isset($_GET['regcode']))
             $qry->close();
 
             $stmt = "UPDATE user SET ActiveStatus = 1
-                     WHERE UserName=? AND Email=? AND RegCode=?";
+                     WHERE UserName=? AND Email=? AND RegistrationCode=?";
 
             if(!($stmt = $connection->prepare($stmt))){
                 echo "Prepare failed: (" . $connection->errno . ") " . $connection->error;
