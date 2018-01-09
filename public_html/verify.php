@@ -3,6 +3,7 @@
 include_once '../config/db.php';
 
 if(isset($_GET['username']) && isset($_GET['email']) && isset($_GET['regcode'])){
+    
 	$username = $_GET['username'];
     $email = $_GET['email'];
     $regcode = $_GET['regcode'];
