@@ -5,7 +5,7 @@
 		
 			echo "<div id='loginBlock' class='navLink'>";
 			echo "logged in as <label>" . $_SESSION['username'] . "</label>";
-			echo "<a href='logout.php'> log out</a>";
+			echo " <a href='logout.php'>log out</a>";
 		}
 		?>
 		</div>

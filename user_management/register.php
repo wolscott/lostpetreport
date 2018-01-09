@@ -9,7 +9,7 @@ session_start();
 include_once '../config/db.php';
 
 if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode']) && isset($_POST['password'])){
-    echo "post variables set";
+
     $username = $_POST['username'];
     $email = $_POST['email'];
     $regcode = $_POST['regcode'];
@@ -24,8 +24,6 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
         echo "Prepare failed: (" . $connection->errno . ") " . $connection->error;
     }
     $qry->bind_param('s', $regcode);
-        
-    var_dump($qry);
     
     try {
         $qry->execute();
@@ -51,6 +49,21 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
             try {
                 $stmt->execute();
                 include_once 'send_email.php';
+                /* the email has been sent, delete the regcode */
+                $delete = "DELETE FROM regcode WHERE RegCode=?";
+                
+                if(!($delete = $connection->prepare($delete))){
+                    echo "Prepare failed: (" . $connection->errno . ") " . $connection->error;
+                }
+                $delete->bind_param('s', $regcode);
+                try {
+                    $delete->execute();
+                }
+                catch(Exception $e){
+                    echo "Error: " . $e->getMessage();
+                }
+                
+                $delete->close();
             }
             catch(Exception $e){
                 echo "Error: " . $e->getMessage();
@@ -64,39 +77,6 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
         echo "Error: " . $e->getMessage();
     }
     
-    mysqli_close($connection);
-}
-
-/* username, email, and regcode passed via "get" in email link
- */
-
-
-if(isset($_GET['username']) && isset($_GET['email']) && isset($_GET['regcode'])){
-	$username = $_GET['username'];
-    $email = $_GET['email'];
-    $regcode = $_GET['regcode'];
-
-    $connection = connect();
-    
-	if($valid){
-		$newUser = true;
-		
-		$qry = "SELECT * FROM user WHERE username='$username'";
-		
-		$result = $connection->query($qry);
-		
-		if($result->num_rows == 1){
-			$row = $result->fetch_assoc();
-			if(password_verify($password, $row['PasswordHash'])){
-				$_SESSION['username'] = $username;
-				header("Location: index.php");	
-			} else {
-				$_SESSION['message'] = "incorrect password! Please try again.";
-
-			}
-		}
-    }
-
     mysqli_close($connection);
 }
 

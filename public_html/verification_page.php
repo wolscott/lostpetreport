@@ -12,7 +12,7 @@
                 <div class="col-lg-12"><?php include_once '../user_management/verify.php'; ?></div>
             </div>
             <div class="row">
-                <div class="col-lg-4 text-right">Go to Login Page</div>
+                <div class="col-lg-12"><a href="login_page.php">Go to Login Page</a></div>
             </div>
             
         </div>
