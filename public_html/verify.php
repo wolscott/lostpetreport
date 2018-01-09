@@ -55,7 +55,6 @@ if(isset($_GET['username']) && isset($_GET['email']) && isset($_GET['regcode']))
         }
         $qry->close();
     }
-    }
 
     mysqli_close($connection);
 }
