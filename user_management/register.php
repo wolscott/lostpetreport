@@ -99,9 +99,12 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
         }
         else {
             /* registration code is not valid */
+            header("Location: /registration_page.php");
             $_SESSION['messageHeader'] = "<h2>Invalid Registration Code</h2>";
             $_SESSION['messageBody'] = "This code has been used or has expired. Contact your administrator.";
-            
+            $_SESSION['email'] = $email;
+            $_SESSION['username'] = $username;
+            exit();
         }
     }
     catch(Exception $e){

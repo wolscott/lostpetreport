@@ -8,6 +8,21 @@ if(isset($_SESSION['regcode'])){
 else {
     $regcode = "";
 }
+if(isset($_SESSION['email'])){
+    $email = $_SESSION['email'];
+    unset($_SESSION['email']);
+}
+else {
+    $email = "";
+}
+if(isset($_SESSION['username'])){
+    $username = $_SESSION['username'];
+    unset($_SESSION['username']);
+}
+else {
+    $username = "";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -30,11 +45,11 @@ else {
             </div>
             <div class="row">
                 <div class="col-lg-4 text-right">Email Address</div>
-                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="email"></div>
+                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="email" value="<?php echo $email; ?>"></div>
             </div>
             <div class="row">
                 <div class="col-lg-4 text-right">User Name</div>
-                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="username"></div>
+                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="username" value="<?php echo $username; ?>"></div>
             </div>
             <div class="row">
                 <div class="col-lg-4 text-right">Password</div>
