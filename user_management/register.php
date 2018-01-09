@@ -50,12 +50,16 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
             catch(PDOException $e){
                 echo "Error: " . $e->getMessage();
             }
+            
+            $stmt->close();
 
         }
     }
     catch(PDOException $e){
         echo "Error: " . $e->getMessage();
     }
+    
+    mysqli_close($connection);
 }
 
 /* username, email, and regcode passed via "get" in email link

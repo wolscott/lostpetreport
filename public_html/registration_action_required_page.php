@@ -12,8 +12,7 @@
                 <div class="col-lg-12"><h2>Account Activiation Required</h2></div>
             </div>
             <div class="row">
-                <div class="col-lg-4 text-right">Registration Code</div>
-                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="regcode"></div>
+                <div class="col-lg-4 text-right">An activation link was email to you.</div>
             </div>
             
         </div>

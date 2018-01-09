@@ -17,6 +17,7 @@ if(isset($_POST['register'])){
     '.$base_url.'/verify.php?username='.$username.'&regcode='.$regcode;
     
     mail($email, $subject, $body);
+    echo "email sent";
 }
 
 
