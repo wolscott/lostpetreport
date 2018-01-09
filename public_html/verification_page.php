@@ -1,3 +1,4 @@
+<?php include_once '../user_management/verify.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     
         <div class="container text-center">
             <div class="row">
-                <div class="col-lg-12"><?php include_once '../user_management/verify.php'; ?></div>
+                <div class="col-lg-12"></div>
             </div>
             <div class="row">
                 <div class="col-lg-12"><a href="login_page.php">Go to Login Page</a></div>

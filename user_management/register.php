@@ -33,7 +33,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
         if($qry->num_rows == 1){
             /* username already exists */
             $qry->close();
-            header("Location: ../public_html/registration_page.php?regcode=$regcode");
+            header("Location: ../public_html/registration_page.php");
         }
     }
     catch(Exception $e){
