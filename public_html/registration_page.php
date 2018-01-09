@@ -8,12 +8,13 @@
     <?php include "header.php"; ?>
     <form action="registration_action_required_page.php" method="post" role="form">
         <div class="container text-center">
+            <?php include "message.php"; ?>
             <div class="row">
                 <div class="col-lg-12"><h2>Register A New Account</h2></div>
             </div>
             <div class="row">
                 <div class="col-lg-4 text-right">Registration Code</div>
-                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="regcode"></div>
+                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="regcode">test</div>
             </div>
             <div class="row">
                 <div class="col-lg-4 text-right">Email Address</div>
