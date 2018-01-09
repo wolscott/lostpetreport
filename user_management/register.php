@@ -32,8 +32,8 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
             /* username already exists */
             $qry->close();
             header("Location: /registration_page.php");
-            $_SESSION['messageHeader'] = "<h2>Invalid Registration Code</h2>";
-            $_SESSION['messageBody'] = "This code has been user or has expired. Contact your administrator.";
+            $_SESSION['messageHeader'] = "<h2>Invalid Username</h2>";
+            $_SESSION['messageBody'] = "This username already exists. Please choose a different one.";
             
             /* exit script */
             exit();
@@ -100,7 +100,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
         else {
             /* registration code is not valid */
             $_SESSION['messageHeader'] = "<h2>Invalid Registration Code</h2>";
-            $_SESSION['messageBody'] = "This code has been user or has expired. Contact your administrator.";
+            $_SESSION['messageBody'] = "This code has been used or has expired. Contact your administrator.";
             
         }
     }
