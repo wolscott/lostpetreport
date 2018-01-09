@@ -19,9 +19,10 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
 	if($valid){
 		$newUser = true;
 		
-		$qry = $connection->prepare("SELECT UserName, PasswordHash FROM user WHERE UserName=?");
+		$qry = $connection->prepare("SELECT UserName, PasswordHash FROM user WHERE UserName=? AND ActiveStatus=?");
 		
-        $qry->bind_param('s', $username);
+        $active = 1;
+        $qry->bind_param('si', $username, $active);
         
         try {
             $qry->execute();
