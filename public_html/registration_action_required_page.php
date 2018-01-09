@@ -1,3 +1,4 @@
+<?php include_once '../user_management/register.php'; ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
     
     <div class="container text-center">
         <div class="row">
-            <div class="col-lg-12"><?php include_once '../user_management/register.php'; ?></div>
+            <div class="col-lg-12"></div>
         </div>
     </div>
 </body>
