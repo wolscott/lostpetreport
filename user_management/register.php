@@ -34,7 +34,7 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
             header("Location: /registration_page.php");
             $_SESSION['messageHeader'] = "<h2>Invalid Username</h2>";
             $_SESSION['messageBody'] = "This username already exists. Please choose a different one.";
-            
+            $_SESSION['regcode'] = $regcode;
             /* exit script */
             exit();
         }

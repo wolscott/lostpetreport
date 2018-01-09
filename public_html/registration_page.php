@@ -1,5 +1,13 @@
 <?php 
 session_start();
+
+if(isset($_SESSION['regcode'])){
+    $regcode = $_SESSION['regcode'];
+    unset($_SESSION['regcode']);
+}
+else {
+    $regcode = "";
+}
 ?>
 
 <!DOCTYPE html>
@@ -18,7 +26,7 @@ session_start();
             </div>
             <div class="row">
                 <div class="col-lg-4 text-right">Registration Code</div>
-                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="regcode"></div>
+                <div class="col-lg-4 text-right"><input type="text" class="form-control" name="regcode" value="<?php echo $regcode; ?>"></div>
             </div>
             <div class="row">
                 <div class="col-lg-4 text-right">Email Address</div>
