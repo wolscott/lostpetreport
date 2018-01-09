@@ -11,9 +11,14 @@
    foreign key constraints if you try to drop them in the wrong order
 */
 
-DROP TABLE IF EXISTS regcode;
+DROP TABLE IF EXISTS user;
 
-CREATE TABLE regcode (
-	RegCode varchar(255),
-	PRIMARY KEY (RegCode)
+CREATE TABLE user (
+	UserName varchar(255) NOT NULL,
+    Email varchar(255),
+	CreationDate datetime,
+	PasswordHash varchar(255) NOT NULL,
+    RegistrationCode varchar(255) NOT NULL,
+    ActiveStatus int NOT NULL,
+	PRIMARY KEY (UserName)
 ); 
