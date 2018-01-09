@@ -32,6 +32,8 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
             /* username already exists */
             $qry->close();
             header("Location: /registration_page.php");
+            /* exit script */
+            exit();
         }
     }
     catch(Exception $e){
