@@ -11,7 +11,7 @@
     <div class="container text-center">
         <?php include "message.php"; ?>
         <div class="row">
-            <div class="col-lg-12"></div>
+            <div class="col-lg-12"><a href="login_page.php">Back to Login</a></div>
         </div>
     </div>
 </body>

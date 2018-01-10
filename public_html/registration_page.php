@@ -33,6 +33,14 @@ else {
 </head>
 <body>
     <?php include "header.php"; ?>
+    <div class="row">
+            <div class="col-sm-6">
+                <a href="login_page.php" class="btn" id="backBlock">&lt Back</a>
+            </div>
+            <div class="col-sm-6">
+                <?php include "nav.php"; ?>
+            </div>
+        </div>
     <form action="registration_action_required_page.php" method="post" role="form">
         <div class="container text-center">
             <?php include "message.php"; ?>
