@@ -1,8 +1,4 @@
 <?php
-/* this file performs 2 tasks:
-    first, information is passed to it via POST it is inserting a new row in the user table of an inactive user
-    second, when information is passed to it via GET, it is checking if that user exists in the table and activating it if it does
-*/
 
 session_start();
 
@@ -14,6 +10,18 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
     $email = $_POST['email'];
     $regcode = $_POST['regcode'];
     $password = $_POST['password'];
+    
+    /* check if password is too short */
+    if(strlen($password) < 8){
+        header("Location: /registration_page.php");
+        $_SESSION['messageHeader'] = "<h2>Invalid Password</h2>";
+        $_SESSION['messageBody'] = "Passwords must be at least 8 character. Please choose a longer one.";
+        $_SESSION['regcode'] = $regcode;
+        $_SESSION['email'] = $email;
+        $_SESSION['username'] = $username;
+        /* exit script */
+        exit();
+    }
     
     $connection = connect();
     /* first check if username is available */
