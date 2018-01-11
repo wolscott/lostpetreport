@@ -23,6 +23,17 @@ if(isset($_POST['username']) && isset($_POST['email']) && isset($_POST['regcode'
         exit();
     }
     
+    /* check if username is too short */
+    if(strlen($username) < 1){
+        header("Location: /registration_page.php");
+        $_SESSION['messageHeader'] = "<h2>Invalid Username</h2>";
+        $_SESSION['messageBody'] = "You must enter a username.";
+        $_SESSION['regcode'] = $regcode;
+        $_SESSION['email'] = $email;
+        /* exit script */
+        exit();
+    }
+    
     $connection = connect();
     /* first check if username is available */
     $qry = "SELECT UserName FROM user WHERE UserName=?";
