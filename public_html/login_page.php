@@ -26,7 +26,7 @@ include_once '../user_management/login.php';
             </div>
             <div class="row">
                 <div class="col-lg-5"></div>
-                <div class="col-lg-2"><button class="btn btn-block" name="login" value="login" type="submit">Log In</div></div>
+                <div class="col-lg-2"><button class="btn btn-block" name="login" value="login" type="submit">Log In</div>
                 <div class="col-lg-5"></div>
             </div>
             <div class="row">
