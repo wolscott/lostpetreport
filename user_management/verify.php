@@ -38,7 +38,8 @@ if(isset($_GET['username']) && isset($_GET['email']) && isset($_GET['regcode']))
 
             try {
                 $stmt->execute();
-                echo "<h2>Your Account has been Activated</h2>";
+                $_SESSION['messageHeader'] = "<h2>Your Account has been Activated</h2>";
+                $_SESSION['messageBody'] = "You will now be able to log in.";
             }
             catch(Exception $e){
                 echo "Error: " . $e->getMessage();

@@ -9,9 +9,7 @@
     <?php include "header.php"; ?>
     
         <div class="container text-center">
-            <div class="row">
-                <div class="col-lg-12"></div>
-            </div>
+            <?php include "message.php"; ?>
             <div class="row">
                 <div class="col-lg-12"><a href="login_page.php">Go to Login Page</a></div>
             </div>
