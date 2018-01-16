@@ -36,13 +36,37 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
     
                 if(password_verify($password, $passwordHash)){
                     $_SESSION['username'] = $username;
+                    $qry->close();
+                    
+                    $qry = $connection->prepare("SELECT AccessLevel FROM user WHERE UserName=?");
+                    $qry->bind_param('s', $username);
+                    
+                    try {
+                        $qry->execute();
+                        $qry->store_result();
+                        $qry->bind_result($accessLevel);
+                        
+                        if($qry->num_rows == 1){
+                            $_SESSION['admin'] = $username;
+                            
+                            if($accessLevel == 1){
+                                $_SESSION['superAdmin'] = $username;
+                            }
+                        }
+                    }
+                    catch(Exception $e){
+                        echo "Permissions Check failed";
+                        echo "Error: " . $e->getMessage();
+                    }
+                    
                     header("Location: index.php");	
                 } else {
                     $_SESSION['message'] = "Login information is incorrect. Please try again.";
                 }
             }
         }
-        catch(PDOException $e){
+        catch(Exception $e){
+            echo "Account Check Failed";
             echo "Error: " . $e->getMessage();
         }
         $qry->close();

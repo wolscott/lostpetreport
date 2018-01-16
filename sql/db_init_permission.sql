@@ -11,7 +11,7 @@
    foreign key constraints if you try to drop them in the wrong order
 */
 
-DROP TABLE IF EXISTS user;
+DROP TABLE IF EXISTS permission;
 
 CREATE TABLE permission (
 	UserName varchar(255) NOT NULL,
