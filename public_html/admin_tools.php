@@ -30,7 +30,7 @@ if(!(isset($_SESSION['username'])) && isset($_SESSION['admin'])){
         <div class="container main-container">
             <h2 class="text-center">Admin Tools</h2>
             <?php include "message.php"; ?>
-            <form action="generate_codes.php" method="post" role="form">
+            <form action="display_codes.php" method="post" role="form">
                 <div class='row'>
                     <div class='col-lg-4'>Generate Registration Codes</div>
                     <div class='col-lg-1'><input type="number" class="form-control" name="numCodes"></div>
