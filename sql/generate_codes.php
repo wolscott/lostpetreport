@@ -22,7 +22,7 @@ if(isset($_POST['generate'])){
             
             try {
                 $stmt->execute();
-                echo "$code<br>"
+                echo "$code<br>";
             }
             catch(Exception $e){
                 echo "Error: " . $e->getMessage() . "<br>";
