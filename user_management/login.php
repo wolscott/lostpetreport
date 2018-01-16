@@ -49,6 +49,8 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
                         if($qry->num_rows == 1){
                             $_SESSION['admin'] = $username;
                             
+                            $qry->fetch();
+                            
                             if($accessLevel == 1){
                                 $_SESSION['superAdmin'] = $username;
                             }
@@ -58,6 +60,8 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
                         echo "Permissions Check failed";
                         echo "Error: " . $e->getMessage();
                     }
+                    
+                    $qry->close();
                     
                     header("Location: index.php");	
                 } else {
