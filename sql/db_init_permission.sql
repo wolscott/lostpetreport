@@ -17,5 +17,5 @@ CREATE TABLE permission (
 	UserName varchar(255) NOT NULL,
     AccessLevel int NOT NULL,
 	PRIMARY KEY (UserName, AccessLevel),
-    FOREIGN KEY UserName REFERENCES user(UserName)
+    FOREIGN KEY (UserName) REFERENCES user(UserName)
 ); 
