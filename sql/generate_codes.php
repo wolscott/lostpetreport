@@ -5,6 +5,7 @@ $connection = connect();
 
 if(isset($_POST['generate'])){
     if(isset($_POST['numCodes'])){
+        echo $_POST['numCodes'];
         for ($i = 0; $i < $_POST['numCodes']; $i++){
             $chars = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ";
             $code = "";
