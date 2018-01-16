@@ -33,24 +33,22 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
 
             if($qry->num_rows == 1){
                 $qry->fetch();
-                $qry->close();
-                
+    
                 if(password_verify($password, $passwordHash)){
                     $_SESSION['username'] = $username;
                     
-                    
-                    $qry = $connection->prepare("SELECT AccessLevel FROM user WHERE UserName=?");
-                    $qry->bind_param('s', $username);
+                    $check = $connection->prepare("SELECT AccessLevel FROM user WHERE UserName=?");
+                    $check->bind_param('s', $username);
                     
                     try {
-                        $qry->execute();
-                        $qry->store_result();
-                        $qry->bind_result($accessLevel);
+                        $check->execute();
+                        $check->store_result();
+                        $check->bind_result($accessLevel);
                         
-                        if($qry->num_rows == 1){
+                        if($check->num_rows == 1){
                             $_SESSION['admin'] = $username;
                             
-                            $qry->fetch();
+                            $check->fetch();
                             
                             if($accessLevel == 1){
                                 $_SESSION['superAdmin'] = $username;
@@ -62,7 +60,7 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
                         echo "Error: " . $e->getMessage();
                     }
                     
-                    $qry->close();
+                    $check->close();
                     
                     header("Location: index.php");	
                 } else {
@@ -74,7 +72,7 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
             echo "Account Check Failed";
             echo "Error: " . $e->getMessage();
         }
-        
+        $qry->close();
     }
 
     mysqli_close($connection);
