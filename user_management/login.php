@@ -37,7 +37,7 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
                 if(password_verify($password, $passwordHash)){
                     $_SESSION['username'] = $username;
                     
-                    $check = $connection->prepare("SELECT AccessLevel FROM user WHERE UserName=?");
+                    $check = $connection->prepare("SELECT AccessLevel FROM permission WHERE UserName=?");
                     $check->bind_param('s', $username);
                     
                     try {
