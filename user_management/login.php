@@ -33,10 +33,11 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
 
             if($qry->num_rows == 1){
                 $qry->fetch();
-    
+                $qry->close();
+                
                 if(password_verify($password, $passwordHash)){
                     $_SESSION['username'] = $username;
-                    $qry->close();
+                    
                     
                     $qry = $connection->prepare("SELECT AccessLevel FROM user WHERE UserName=?");
                     $qry->bind_param('s', $username);
@@ -73,7 +74,7 @@ if(isset($_POST['login']) && isset($_POST['username']) && isset($_POST['password
             echo "Account Check Failed";
             echo "Error: " . $e->getMessage();
         }
-        $qry->close();
+        
     }
 
     mysqli_close($connection);
