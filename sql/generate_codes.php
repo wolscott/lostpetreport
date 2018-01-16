@@ -10,7 +10,7 @@ if(isset($_POST['generate'])){
             $chars = "0123456789ABCDEFGHJKLMNPQRSTUVWXYZ";
             $code = "";
 
-            for ($i = 0; $i < 6; $i++) {
+            for ($j = 0; $j < 6; $j++) {
                 $code .= $chars[mt_rand(0, strlen($chars)-1)];
             }
 
