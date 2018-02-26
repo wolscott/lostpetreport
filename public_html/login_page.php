@@ -30,6 +30,7 @@ include_once '../user_management/login.php';
                 <div class="col-lg-5"></div>
             </div>
             <div class="row">
+                <div class="col-lg-12"><a href="reset_password_page.php">(Forgot Password)</a></div>
                 <div class="col-lg-12"><a href="registration_page.php">Register a New Account</a></div>
             </div>
         </div>

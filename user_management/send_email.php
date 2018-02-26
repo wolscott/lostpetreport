@@ -1,8 +1,14 @@
 <?php
 
-$base_url = 'http://ec2-52-90-32-110.compute-1.amazonaws.com';
+/* $base_url = 'http://ec2-52-90-32-110.compute-1.amazonaws.com'; */
+$base_url = 'https://lostpetreport.net';
 
-if(isset($_POST['register'])){
+if(isset($_POST['register']) && 
+   isset($_POST['regcode']) && 
+   isset($_POST['email']) && 
+   isset($_POST['username']) && 
+   isset($_POST['password']))
+{
     $regcode = $_POST['regcode'];
     $email = $_POST['email'];
     $username = $_POST['username'];
@@ -24,4 +30,25 @@ if(isset($_POST['register'])){
     $_SESSION['messageBody'] = "An activation link has been sent to your email address";
 }
 
+if(isset($_POST['reset_password']) &&
+   isset($_POST['token']) && 
+   isset($_POST['email']))
+{
+    $token = $_POST['token'];
+    $email = $_POST['email'];
+    
+    $subject = "LostPetReport - Reset Password";
+    $body = '
+    
+    Click the following link to reset your password:
+    
+    '.$base_url.'/verification_page.php?email='.$email.'&rt='.$token;
+    
+    $fromheader = 'From: registration@LostPetReport.net';
+    
+    mail($email, $subject, $body, $fromheader);
+    
+    $_SESSION['messageHeader'] = "<h2>Action Required</h2>";
+    $_SESSION['messageBody'] = "An password reset link has been sent to your email address";
+}
 ?>
